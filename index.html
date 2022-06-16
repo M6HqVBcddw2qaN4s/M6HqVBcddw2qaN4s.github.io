@@ -1,58 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>View Window On Element</title>
-</head>
-<body align="center">
-	<h2>Screen Capture</h2>
-	<p>
-		<button id="start">Select Window & Start Viewing</button>
-		<button id="stop">Stop Viewing</button>
-	</p>
-	<video id="video" style="border: solid 2px #000; width: 100%;" autoplay></video>
-	<script>
-	const video = document.getElementById("video");
-	const start = document.getElementById("start");
-	const stop = document.getElementById("stop");
-
-	var displayMediaOptions = {
-		video: {
-			cursor: "always",
-		},
-		audio: true,
-	};
-
-	start.onclick = function (e) {
-		startSharing();
-	};
-
-	stop.onclick = function (e) {
-		stopSharing();
-	};
-
-	async function startSharing() {
-		let capture = null;
-		try {
-			capture = await navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
-
-			capture
-				.getVideoTracks()[0]
-				.addEventListener("ended", () => stopSharing());
-
-			video.srcObject = capture;
-		} catch (error) {
-			console.log(error);
-		}
-	}
-
-	function stopSharing() {
-		let tracks = video.srcObject.getTracks();
-		tracks.forEach((track) => track.stop());
-		video.srcObject = null;
-	}
-	</script>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>fortnite o pubg</title>
+	</head>
+	<body>
+		<video autoplay loop>
+			<source src="https://cdn.discordapp.com/attachments/982355715928784968/983976428016140308/v09044g40000caeqn8jc77u5ej9ce2c0.mp4" type="video/mp4">
+			Your browser does not support video elements.
+		</video>
+	</body>
 </html>
